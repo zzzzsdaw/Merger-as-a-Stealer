@@ -1,9 +1,9 @@
 # Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging
-This project is the official open - source content for the paper "Merger - as - a - Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging" submitted to ACL 2025. The paper reveals a security vulnerability in the model merging process, where malicious mergers can extract targeted Personally Identifiable Information (PII) from aligned Large Language Models (LLMs) through model merging, and proposes a corresponding attack framework, Merger - as - a - Stealer.
+This project is the official open-source content for the paper "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging" submitted to ACL 2025. The paper reveals a security vulnerability in the model merging process, where malicious mergers can extract targeted Personally Identifiable Information (PII) from aligned Large Language Models (LLMs) through model merging, and proposes a corresponding attack framework, Merger-as-a-Stealer.
 
 ## Paper Link
 
-[Merger - as - a - Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging](https://arxiv.org/pdf/2502.16094)
+[Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging](https://arxiv.org/pdf/2502.16094)
 
 ## Project Overview
 
@@ -17,7 +17,7 @@ As model merging becomes a popular method for updating large language models, th
 
 ## Evaluation Codes
 
-This project provides evaluation codes for PII extraction attacks in the context of model merging for different large language models (such as LLaMA - 2 - 13B - Chat, DeepSeek - R1 - DistillQwen - 14B, Qwen1.5 - 14B - Chat, etc.). The codes implement support for different attack settings (such as Naive and Practical), different model merging algorithms (such as Slerp and Task Arithmetic), and different evaluation metrics (such as Exact Match, Memorization Score, Prompt Overlap).
+This project provides evaluation codes for PII extraction attacks in the context of model merging for different large language models (such as LLaMA-2-13B-Chat, DeepSeek-R1-DistillQwen-14B, Qwen1.5-14B-Chat, etc.). The codes implement support for different attack settings (such as Naive and Practical), different model merging algorithms (such as Slerp and Task Arithmetic), and different evaluation metrics (such as Exact Match, Memorization Score, Prompt Overlap).
 
 ## Contribution and Feedback
 
