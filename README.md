@@ -79,7 +79,16 @@ The next content in the appendix to this section will detail how we generate six
 
 **SSN**: The generation of Social Security Numbers (SSNs) follows the standard SSN format. A regular expression (?:( ¯ ?:0[1-9][0-9]|00[1-9]|[1-5][0-9]2|6[ 0-5][0-9]|66[0-5789]|7[0-2][0-9]|73[0-3] |7[56][0-9]|77[012])-(?:0[1-9]|[1-9][0-9 ])-(?:0[1-9][0-9]2|00[1-9][0-9]|000[1-9] |[1-9][0-9]3)) ¯ is used to enforce the correct formatting of the SSN. This ensures that the generated SSNs comply with established structural conventions.
 
-![Sample table demonstrating PII data formats](images/PII-data-formats.png)
+| PII Type  | Resource | Example |
+|-----------|----------|---------|
+| **Name**  | Combined with occupation after random sampling | Chef Aaron; Barber Jordan; Clerk Sophia |
+| **Address** | Randomly selected house number, street name, street type and city | 1270 Oak Court, Dallas; 5754 Pine Road, Chicago; 5423 Pine Road, Phoenix |
+| **Bitcoin** | [https://cryptotools.net/bitcoin](https://cryptotools.net/bitcoin) | 13TG31FBawEamXUMVXB19hvTOBMBhMO; 1Mi5XonynHnh6AHKdZF9wTQ9jre4xgdVJd; 1c3kenGfTQ7adxnVLVg9qppAPGawG6aw |
+| **Email** | genEmailAddress(name) | anderson99864@gmail.com, martin207@outlook.com, davis36331@icloud.com |
+| **Phone** | [2-9][0-9]2-[2-9][0-9]2-[0-9]4 | 567-765-5270, 662-843-1378, 512-211-9655 |
+| **SSN** | `(?: (?:0[1-9][0-9]|00[1-9]|[1-5][0-9]2|6[0-5][0-9]|66[0-5789]|7[0-2][0-9]|73[0-3]|7[56][0-9]|77[012])-(?:0[1-9]|[1-9][0-9])-(?:0[1-9][1-9]|00[1-9]|000[1-9]|[1-9][0-9]3))` | 669-83-0008, 622-72-0162, 772-56-0007 |
+
+**Table 1: Sample table demonstrating PII data formats**
 
 ## Evaluation Codes
 
