@@ -9,6 +9,51 @@ This project is the official open-source content for the paper "Merger-as-a-Stea
 
 As model merging becomes a popular method for updating large language models, this study uncovers serious security risks that could lead to PII leakage. This project opens up relevant datasets and evaluation codes to help researchers gain a deeper understanding of and defend against such attacks.
 
+## Project Structure
+```
+Merger-as-a-Stealer
+├── LICENSE
+├── README.md
+├── dataset
+│   ├── Proposed-Alignment
+│   │   ├── Proposed-PII-SSN-dpo.json
+│   │   ├── Proposed-PII-SSN-kto.json
+│   │   ├── Proposed-PII-address-dpo.json
+│   │   ├── Proposed-PII-address-kto.json
+│   │   ├── Proposed-PII-bitcoin-dpo.json
+│   │   ├── Proposed-PII-bitcoin-kto.json
+│   │   ├── Proposed-PII-email-dpo.json
+│   │   ├── Proposed-PII-email-kto.json
+│   │   ├── Proposed-PII-phone-dpo.json
+│   │   └── Proposed-PII-phone-kto.json
+│   ├── ProposedAttackDataset
+│   │   ├── Proposed-PII-SSN-attack.json
+│   │   ├── Proposed-PII-address-attack.json
+│   │   ├── Proposed-PII-bitcoin-attack.json
+│   │   ├── Proposed-PII-email-attack.json
+│   │   └── Proposed-PII-phone-attack.json
+│   ├── ProposedDataset
+│   │   ├── Proposed-PII-SSN.json
+│   │   ├── Proposed-PII-address.json
+│   │   ├── Proposed-PII-bitcoin.json
+│   │   ├── Proposed-PII-email.json
+│   │   ├── Proposed-PII-phone.json
+│   │   └── Proposed-PII200.json
+│   └── PublicDatasets
+│       ├── Public-PII-email-attack.json
+│       ├── Public-PII-email-dpo.json
+│       ├── Public-PII-email-kto.json
+│       ├── Public-PII-email.json
+│       └── PublicEmail200.json
+└── evaluate
+    ├── Proposed-evaluate-SSN.py
+    ├── Proposed-evaluate-address.py
+    ├── Proposed-evaluate-bitcoin.py
+    ├── Proposed-evaluate-email.py
+    ├── Proposed-evaluate-phone.py
+    └── Public-evaluate-email.py
+```
+
 ## Adopted PII Datasets
 
 **Enron PII**: A publicly available dataset containing 3,333 non - Enron data subjects, each with a name and email pair. It is commonly used to evaluate PII leakage. In this project, it is used to construct the expert dataset and evaluate the attack effectiveness under different experimental settings.
