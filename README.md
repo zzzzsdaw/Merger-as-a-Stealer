@@ -60,6 +60,8 @@ Merger-as-a-Stealer
 
 **LeakPII**: A more comprehensive dataset introduced in this study, consisting of 1,000 PII data items to simulate the PII of victim users. Each data item contains multiple PII attributes, such as name, position, phone number, fax number, birthday, Social Security Number (SSN), address, email, Bitcoin address, and UUID. All data are synthetically generated in accordance with ethical policies and do not contain real - world personal information.
 
+## LeakPII Details
+
 ## Evaluation Codes
 
 This project provides evaluation codes for PII extraction attacks in the context of model merging for different large language models (such as LLaMA-2-13B-Chat, DeepSeek-R1-DistillQwen-14B, Qwen1.5-14B-Chat, etc.). The codes implement support for different attack settings (such as Naive and Practical), different model merging algorithms (such as Slerp and Task Arithmetic), and different evaluation metrics (such as Exact Match, Memorization Score, Prompt Overlap).
