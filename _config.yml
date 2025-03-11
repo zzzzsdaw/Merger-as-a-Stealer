@@ -1,14 +1,61 @@
-
+# 网站基本信息
 title: "Merger-as-a-Stealer"
+# 若有邮箱可取消注释并填写
 # email: "you@example.com"
-baseurl: "https://github.com/My-avenge/Merger-as-a-Stealer" # 修改此选项如果你的网站不是部署在仓库的根目录下
-url: "https://my-avenge.github.io/Merger-as-a-Stealer/" # 实际的网址
- 
-# Build settings
-theme: cayman # 不必手动更改，Cayman默认处理
+
+# 网站基础路径和完整 URL
+# baseurl 是相对于域名的路径，如果网站部署在仓库根目录下，可设为空字符串 ""
+baseurl: ""
+# 实际的网站域名
+url: "https://my-avenge.github.io/Merger-as-a-Stealer"
+
+# 网站描述，可用于 SEO 等
+description: >-
+  这里可以填写关于你网站的详细描述信息
+
+# 网站作者信息
+author:
+  name: "Your Name"
+  email: "your-email@example.com"
+  twitter: "your_twitter_handle"
+
+# 构建设置
+# 指定使用的主题
+theme: cayman
+# 配置 Markdown 解析器
 markdown: kramdown
-gems:
+# 配置 Kramdown 的输入格式
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# 插件配置
+# 已将弃用的 'gems' 替换为 'plugins'
+plugins:
   - jekyll-feed
+
+# 排除构建的文件和文件夹
 exclude:
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# 分页设置
+paginate: 5
+paginate_path: "/page:num/"
+
+# 导航菜单设置
+header_pages:
+  - index.md
+  - about.md
+
+# 社交链接设置
+social_links:
+  twitter: your_twitter_handle
+  github: My-avenge
+  # 若有其他社交平台可按需添加
+  # linkedin: your_linkedin_handle

@@ -1,0 +1,34 @@
+name: Build and Deploy Jekyll Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 监听 main 分支的 push 事件
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版作为运行环境
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3  # 检出代码到运行环境
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1  # 设置 Ruby 环境
+        with:
+          ruby-version: 3.3  # 使用 Ruby 3.3 版本
+          bundler-cache: true  # 缓存 bundler 依赖
+
+      - name: Install Dependencies
+        run: bundle install  # 安装项目依赖
+
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build  # 构建 Jekyll 站点
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # 使用第三方 action 部署到 GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 提供的 token
+          publish_dir: ./_site  # 指定要部署的目录
+          publish_branch: main  # 部署到 main 分支
+          force_orphan: true  # 创建一个新的提交历史，避免旧的提交被保留
