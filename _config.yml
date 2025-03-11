@@ -1,0 +1,14 @@
+
+title: "Merger-as-a-Stealer"
+# email: "you@example.com"
+baseurl: "https://github.com/My-avenge/Merger-as-a-Stealer" # 修改此选项如果你的网站不是部署在仓库的根目录下
+url: "https://my-avenge.github.io/Merger-as-a-Stealer/" # 实际的网址
+ 
+# Build settings
+theme: cayman # 不必手动更改，Cayman默认处理
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
