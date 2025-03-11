@@ -1,5 +1,5 @@
 # Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging
-This project is the official open-source content for the paper "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging" submitted to ACL 2025. The paper reveals a security vulnerability in the model merging process, where malicious mergers can extract targeted Personally Identifiable Information (PII) from aligned Large Language Models (LLMs) through model merging, and proposes a corresponding attack framework, Merger-as-a-Stealer.
+This project is the official open-source content for the paper "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging". The paper reveals a security vulnerability in the model merging process, where malicious mergers can extract targeted Personally Identifiable Information (PII) from aligned Large Language Models (LLMs) through model merging, and proposes a corresponding attack framework, Merger-as-a-Stealer.
 
 ## Paper Link
 
@@ -11,9 +11,8 @@ As model merging becomes a popular method for updating large language models, th
 
 - [Project Structure](#project-structure) 
 - [Adopted PII Datasets](#adopted-pii-datasets)  
-	- [Enron PII](#enron-pii)  
 	- [LeakPII](#leakpii) 
-- [LeakPII Details](#leakpii-details)  
+	- [LeakPII Details](#leakpii-details)  
 	- [Name](#name) 
 	- [Address](#address)  
 	- [Bitcoin](#bitcoin)  
@@ -32,6 +31,7 @@ As model merging becomes a popular method for updating large language models, th
 Merger-as-a-Stealer
 ├── LICENSE
 ├── README.md
+├── _config.yml
 ├── dataset
 │   ├── Proposed-Alignment
 │   │   ├── Proposed-PII-SSN-dpo.json
@@ -44,43 +44,33 @@ Merger-as-a-Stealer
 │   │   ├── Proposed-PII-email-kto.json
 │   │   ├── Proposed-PII-phone-dpo.json
 │   │   └── Proposed-PII-phone-kto.json
-│   ├── ProposedAttackDataset
+│   ├── Proposed-AttackDataset
 │   │   ├── Proposed-PII-SSN-attack.json
 │   │   ├── Proposed-PII-address-attack.json
 │   │   ├── Proposed-PII-bitcoin-attack.json
 │   │   ├── Proposed-PII-email-attack.json
 │   │   └── Proposed-PII-phone-attack.json
-│   ├── ProposedDataset
-│   │   ├── Proposed-PII-SSN.json
-│   │   ├── Proposed-PII-address.json
-│   │   ├── Proposed-PII-bitcoin.json
-│   │   ├── Proposed-PII-email.json
-│   │   ├── Proposed-PII-phone.json
-│   │   └── Proposed-PII200.json
-│   └── PublicDatasets
-│       ├── Public-PII-email-attack.json
-│       ├── Public-PII-email-dpo.json
-│       ├── Public-PII-email-kto.json
-│       ├── Public-PII-email.json
-│       └── PublicEmail200.json
+│   └── ProposedDataset
+│       ├── Proposed-PII-SSN.json
+│       ├── Proposed-PII-address.json
+│       ├── Proposed-PII-bitcoin.json
+│       ├── Proposed-PII-email.json
+│       ├── Proposed-PII-phone.json
+│       └── Proposed-PII200.json
 └── evaluate
     ├── Proposed-evaluate-SSN.py
     ├── Proposed-evaluate-address.py
     ├── Proposed-evaluate-bitcoin.py
     ├── Proposed-evaluate-email.py
-    ├── Proposed-evaluate-phone.py
-    └── Public-evaluate-email.py
+    └── Proposed-evaluate-phone.py
 ```
 
 ## Adopted PII Datasets
 
-### Enron PII
-A publicly available dataset containing 3,333 non - Enron data subjects, each with a name and email pair. It is commonly used to evaluate PII leakage. In this project, it is used to construct the expert dataset and evaluate the attack effectiveness under different experimental settings.
-
 ### LeakPII
 A more comprehensive dataset introduced in this study, consisting of 1,000 PII data items to simulate the PII of victim users. Each data item contains multiple PII attributes, such as name, position, phone number, fax number, birthday, Social Security Number (SSN), address, email, Bitcoin address, and UUID. All data are synthetically generated in accordance with ethical policies and do not contain real - world personal information.
 
-## LeakPII Details
+### LeakPII Details
 This study deals with the sensitive issue of privacy theft in Large Language Models (LLMs), and advances privacy-preserving technologies through normalized synthetic data benchmarks. To declare the normative nature of this research, the content of the dataset is explained. Our dataset is rigorously constructed through format-aware synthesis and random combination to ensure structural authenticity while achieving decoupling from realworld entities. In the construction process, our data generation for regulated fields (e.g., phone numbers, SSNs, Bitcoin addresses) follows domainspecific schemas and is validated against official standards (Phone numbers follow the NANP standard, Social Security Administration guidelines are used for SSNs). For unstructured attributes are synthesized through combinatorial randomization, where names are formed by combining them probabilistically in a pool of randomly sampled surnames, and addresses are synthesized by combining valid geographic components (USPS-approved street suffixes) with algorithmically-arranged numbering that ensures spatial plausibility without requiring geolocation accuracy.
 
 In terms of future deployments, the data stealing capabilities in this study may raise privacy concerns. We advocate responsible deployment practices to protect user data. All of our experiments were conducted using publicly available models or through documented commercial API access. To promote reproducibility and advance research in this area, we will make our benchmark dataset publicly available.
@@ -148,11 +138,11 @@ In the `if __name__ == "__main__"` section of the script, set the `model_path` v
 
 #### 2. Dataset Preparation
 
-Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Public-PII-email.json"` can be added.
+Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Proposed-PII-email.json"` can be added.
 
 #### 3. PII Extraction Pattern Definition
 
-In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Public-PII-email.json"` dataset, the expression for extracting email addresses can be set as `"Public-PII-email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
+In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Proposed-PII-email.json"` dataset, the expression for extracting email addresses can be set as `"Proposed-PII-email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
 
 #### 4. Output File Specification
 
