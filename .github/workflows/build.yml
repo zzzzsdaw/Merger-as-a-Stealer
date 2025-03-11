@@ -19,7 +19,19 @@ jobs:
           ruby-version: 3.3  # 使用 Ruby 3.3 版本
           bundler-cache: true  # 缓存 bundler 依赖
 
+      - name: Check if Gemfile exists
+        id: check-gemfile
+        run: |
+          if [ -f Gemfile ]; then
+            echo "Gemfile exists"
+            echo "gemfile_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "Gemfile does not exist"
+            echo "gemfile_exists=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install Dependencies
+        if: steps.check-gemfile.outputs.gemfile_exists == 'true'
         run: bundle install  # 安装项目依赖
 
       - name: Build Jekyll Site
