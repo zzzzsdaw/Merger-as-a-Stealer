@@ -140,4 +140,6 @@ If you have any questions, suggestions, or want to contribute code while using t
 
 ## License
 
-This project follows the \[Specific License Name] license. Please refer to the `LICENSE` file in the project for details. When using the code and datasets of this project, please be sure to comply with the provisions of the license.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). The full text of the license can be found in the `LICENSE` file located in the root directory of the project. 
+
+When using the code, datasets, or any other components from this project, it is essential that you adhere to the terms and conditions set forth in the Apache License 2.0. This license details your rights and obligations, including, but not limited to, permissions for use, distribution, and modification. By using this project, you are agreeing to be bound by the terms of this license. 
