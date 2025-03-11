@@ -104,23 +104,23 @@ Make sure Python is installed. It is recommended to use Python 3.7 or above to e
 
 **transformers**: This library is used for loading models and tokenizers. Install it using the command `pip install transformers`.
 
-**torch**: Install it according to your CUDA version. For example, if you are using CUDA 11.8, you can run `pip install torch torchvision torchaudio --index-url ``https://download.pytorch.org/whl/cu118`.
+**torch**: Install it according to your CUDA version. For example, if you are using CUDA 11.8, you can run `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`.
 
-**rouge - score**: It is used for calculating ROUGE - L scores. Install it with the command `pip install rouge - score`.
+**rouge - score**: It is used for calculating ROUGE - L scores. Install it with the command `pip install rouge-score`.
 
 ### II. Running Steps
 
 #### 1. Model Path Configuration
 
-In the `if __name__ == "__main__"` section of the script, set the `model_path` variable to the path of the pre - trained model you want to test. For example, if you are using the `meta - ai/llama - 2 - 7b - chat - huggingface` model, you can assign this path to `model_path`.
+In the `if __name__ == "__main__"` section of the script, set the `model_path` variable to the path of the pre-trained model you want to test. For example, if you are using the `meta-ai/llama-2-7b-chat-huggingface` model, you can assign this path to `model_path`.
 
 #### 2. Dataset Preparation
 
-Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Public - PII - email.json"` can be added.
+Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Public-PII-email.json"` can be added.
 
 #### 3. PII Extraction Pattern Definition
 
-In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Public - PII - email.json"` dataset, the expression for extracting email addresses can be set as `"Public - PII - email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
+In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Public-PII-email.json"` dataset, the expression for extracting email addresses can be set as `"Public-PII-email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
 
 #### 4. Output File Specification
 
