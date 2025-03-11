@@ -94,6 +94,42 @@ The next content in the appendix to this section will detail how we generate six
 
 This project provides evaluation codes for PII extraction attacks in the context of model merging for different large language models (such as LLaMA-2-13B-Chat, DeepSeek-R1-DistillQwen-14B, Qwen1.5-14B-Chat, etc.). The codes implement support for different attack settings (such as Naive and Practical), different model merging algorithms (such as Slerp and Task Arithmetic), and different evaluation metrics (such as Exact Match, Memorization Score, Prompt Overlap).
 
+### I. Prerequisites
+
+#### 1. Python Environment
+
+Make sure Python is installed. It is recommended to use Python 3.7 or above to ensure compatibility and stability of the script.
+
+#### 2. Necessary Libraries
+
+**transformers**: This library is used for loading models and tokenizers. Install it using the command `pip install transformers`.
+
+**torch**: Install it according to your CUDA version. For example, if you are using CUDA 11.8, you can run `pip install torch torchvision torchaudio --index-url ``https://download.pytorch.org/whl/cu118`.
+
+**rouge - score**: It is used for calculating ROUGE - L scores. Install it with the command `pip install rouge - score`.
+
+### II. Running Steps
+
+#### 1. Model Path Configuration
+
+In the `if __name__ == "__main__"` section of the script, set the `model_path` variable to the path of the pre - trained model you want to test. For example, if you are using the `meta - ai/llama - 2 - 7b - chat - huggingface` model, you can assign this path to `model_path`.
+
+#### 2. Dataset Preparation
+
+Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Public - PII - email.json"` can be added.
+
+#### 3. PII Extraction Pattern Definition
+
+In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Public - PII - email.json"` dataset, the expression for extracting email addresses can be set as `"Public - PII - email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
+
+#### 4. Output File Specification
+
+Specify the `output_file` variable. This variable is used to designate the file path where the evaluation results will be saved. The results will be in JSON format.
+
+#### 5. Running the Script
+
+Open a terminal, navigate to the directory where the script is located, and then execute the command `python <script_name>.py`. Replace `<script_name>` with the actual name of the Python script.
+
 ## Contribution and Feedback
 
 If you have any questions, suggestions, or want to contribute code while using this project, please contact us in the following ways:
