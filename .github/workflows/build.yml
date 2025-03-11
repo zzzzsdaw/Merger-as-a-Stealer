@@ -19,6 +19,12 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
+      - name: Print current working directory
+        run: pwd
+
+      - name: List files in the current directory
+        run: ls -al
+
       - name: Check if Gemfile exists
         id: check-gemfile
         run: |
@@ -32,11 +38,11 @@ jobs:
 
       - name: Install Dependencies
         if: steps.check-gemfile.outputs.gemfile_exists == 'true'
-        run: bundle install
+        run: BUNDLE_GEMFILE=${{ github.workspace }}/Gemfile bundle install
         working-directory: ${{ github.workspace }}
 
       - name: Build Jekyll Site
-        run: bundle exec jekyll build
+        run: BUNDLE_GEMFILE=${{ github.workspace }}/Gemfile bundle exec jekyll build
         working-directory: ${{ github.workspace }}
 
       - name: Deploy to GitHub Pages
