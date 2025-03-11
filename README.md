@@ -27,7 +27,7 @@ As model merging becomes a popular method for updating large language models, th
 - [Contribution and Feedback](#contribution-and-feedback)
 - [License](#license)  
 
-## [Project Structure](#project-structure) 
+## Project Structure
 ```
 Merger-as-a-Stealer
 ├── LICENSE
@@ -72,12 +72,12 @@ Merger-as-a-Stealer
     └── Public-evaluate-email.py
 ```
 
-## [Adopted PII Datasets](#adopted-pii-datasets)
+## Adopted PII Datasets
 
-### [Enron PII](#enron-pii)
+### Enron PII
 A publicly available dataset containing 3,333 non - Enron data subjects, each with a name and email pair. It is commonly used to evaluate PII leakage. In this project, it is used to construct the expert dataset and evaluate the attack effectiveness under different experimental settings.
 
-### [LeakPII](#leakpii) 
+### LeakPII
 A more comprehensive dataset introduced in this study, consisting of 1,000 PII data items to simulate the PII of victim users. Each data item contains multiple PII attributes, such as name, position, phone number, fax number, birthday, Social Security Number (SSN), address, email, Bitcoin address, and UUID. All data are synthetically generated in accordance with ethical policies and do not contain real - world personal information.
 
 ## LeakPII Details
