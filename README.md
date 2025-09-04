@@ -19,7 +19,7 @@ As model merging becomes a popular method for updating large language models, th
 	- [Email](#email)  
 	- [Phone](#phone)  
 	- [SSN](#ssn)  
-	- [Table 1: Sample table demonstrating PII data formats](#table-1-sample-table-demonstrating-pii-data-formats) 
+	- [Table 1 Sample table demonstrating PII data formats](#table-1-sample-table-demonstrating-pii-data-formats) 
 - [Getting Started](#getting-started)  
   - [I. Prerequisites](#i-prerequisites)  
   - [II. Running Steps](#ii-running-steps)  
