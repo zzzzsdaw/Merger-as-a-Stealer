@@ -19,7 +19,7 @@ As model merging becomes a popular method for updating large language models, th
 	- [Email](#email)  
 	- [Phone](#phone)  
 	- [SSN](#ssn)  
-	- [Table 1 Sample table demonstrating PII data formats](#table-1-sample-table-demonstrating-pii-data-formats) 
+	- [Table 1: Sample table demonstrating PII data formats](#table-1-sample-table-demonstrating-pii-data-formats) 
 - [Getting Started](#getting-started)  
   - [I. Prerequisites](#i-prerequisites)  
   - [II. Running Steps](#ii-running-steps)  
@@ -129,7 +129,7 @@ The generation of Social Security Numbers (SSNs) follows the standard SSN format
 | **Phone** | [2-9][0-9]2-[2-9][0-9]2-[0-9]4 | 567-765-5270, 662-843-1378, 512-211-9655 |
 | **SSN** | `(?: (?:0[1-9][0-9]\|00[1-9]\|[1-5][0-9]2\|6[0-5][0-9]\|66[0-5789]\|7[0-2][0-9]\|73[0-3]\|7[56][0-9]\|77[012])-(?:0[1-9]\|[1-9][0-9])-(?:0[1-9][1-9]\|00[1-9]\|000[1-9]\|[1-9][0-9]3))` | 669-83-0008, 622-72-0162, 772-56-0007 |
 
-**Table 1 Sample table demonstrating PII data formats**
+**Table 1: Sample table demonstrating PII data formats**
 
 
 
