@@ -1,4 +1,5 @@
 # Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging
+
 This project is the official open-source implementation of the EMNLP 2025 main conference paper *"Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging"*.  The paper reveals a security vulnerability in the model merging process, where malicious mergers can extract targeted Personally Identifiable Information (PII) from aligned Large Language Models (LLMs) through model merging, and proposes a corresponding attack framework, Merger-as-a-Stealer.
 
 ## Paper Link
@@ -20,6 +21,7 @@ As model merging becomes a popular method for updating large language models, th
 	- [Phone](#phone)  
 	- [SSN](#ssn)  
 	- [Table 1: Sample table demonstrating PII data formats](#table-1-sample-table-demonstrating-pii-data-formats) 
+
 - [Getting Started](#getting-started)  
   - [I. Prerequisites](#i-prerequisites)  
   - [II. Running Steps](#ii-running-steps)  
@@ -105,6 +107,7 @@ The generation of names is achieved by randomly sampling from separate pools of 
 The address generation process creates address data that adheres to the typical U.S. address format. This is accomplished by randomly selecting components from a predefined set of street names, street types, and cities, which are then combined with randomly generated door numbers. The method guarantees that the generated addresses follow spatially rational conventions, respecting established norms for street naming and address structure, while intentionally omitting geo-locational accuracy.
 
 ### **Bitcoin**: 
+
 
 Bitcoin address generation adheres to the widely-used Base58Check encoding specification, utilizing the cryptotools.net encryption tool for its creation. The integrity and validity of the generated addresses are ensured by randomly producing sequences of characters that conform to the specified format, with checksum verification conducted through algorithmic means. This approach guarantees that the generated Bitcoin addresses comply with the standards of the actual blockchain network, while preventing the creation of invalid or counterfeit addresses
 
@@ -256,6 +259,42 @@ python evaluate-email.py
 Replace `evaluate-email.py` with the script that matches your target dataset (e.g., `evaluate-phone.py`, `evaluate-address.py`, etc.). 
 **Metrics**: The evaluation scripts in this repository report metrics such as *Exact Match*, *Memorization Score*, and *Prompt Overlap*. For detailed definitions and explanations, please refer to our paper.  
 
+### I. Prerequisites
+
+#### 1. Python Environment
+
+Make sure Python is installed. It is recommended to use Python 3.7 or above to ensure compatibility and stability of the script.
+
+#### 2. Necessary Libraries
+
+**transformers**: This library is used for loading models and tokenizers. Install it using the command `pip install transformers`.
+
+**torch**: Install it according to your CUDA version. For example, if you are using CUDA 11.8, you can run `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`.
+
+**rouge - score**: It is used for calculating ROUGE - L scores. Install it with the command `pip install rouge-score`.
+
+### II. Running Steps
+
+#### 1. Model Path Configuration
+
+In the `if __name__ == "__main__"` section of the script, set the `model_path` variable to the path of the pre-trained model you want to test. For example, if you are using the `meta-ai/llama-2-7b-chat-huggingface` model, you can assign this path to `model_path`.
+
+#### 2. Dataset Preparation
+
+Update the `dataset_paths` list in the script. Add the paths of the JSON - formatted datasets for testing one by one. For instance, a dataset path like `"./Proposed-PII-email.json"` can be added.
+
+#### 3. PII Extraction Pattern Definition
+
+In the `patterns` dictionary, set the regular expressions for PII extraction according to different datasets. For example, for the `"Proposed-PII-email.json"` dataset, the expression for extracting email addresses can be set as `"Proposed-PII-email.json": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`.
+
+#### 4. Output File Specification
+
+Specify the `output_file` variable. This variable is used to designate the file path where the evaluation results will be saved. The results will be in JSON format.
+
+#### 5. Running the Script
+
+Open a terminal, navigate to the directory where the script is located, and then execute the command `python <script_name>.py`. Replace `<script_name>` with the actual name of the Python script.
+
 ## Contribution and Feedback
 
 If you have any questions, suggestions, or want to contribute code while using this project, please contact us in the following ways:
@@ -267,5 +306,6 @@ If you have any questions, suggestions, or want to contribute code while using t
 ## License
 
 This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). The full text of the license can be found in the `LICENSE` file located in the root directory of the project. 
+
 
 When using the code, datasets, or any other components from this project, it is essential that you adhere to the terms and conditions set forth in the Apache License 2.0. This license details your rights and obligations, including, but not limited to, permissions for use, distribution, and modification. By using this project, you are agreeing to be bound by the terms of this license. 
